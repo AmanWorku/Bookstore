@@ -15,3 +15,5 @@ export const addBook = (book) => (
 export const deleteBook = (book) => (
   { type: DELETE, book }
 );
+
+export default bookReducer;
