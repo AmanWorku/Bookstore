@@ -11,7 +11,7 @@ const categoryReducer = (state = INITIAL_STATE, action = {}) => {
   }
 };
 export const checkStatus = () => ({
-  type : CHECK_STATUS,
+  type: CHECK_STATUS,
 });
 
 export default categoryReducer;

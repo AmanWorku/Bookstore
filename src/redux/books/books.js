@@ -1,25 +1,23 @@
-import { createReducer } from '@reduxjs/toolkit';
-
 const ADD = 'bookstore/books/ADD';
-const DELETE = 'bookstore/books/DELETE';
+const REMOVE = 'bookstore/books/REMOVE';
 const INITIAL_STATE = 0;
-const bookReducer = (state = INITIAL_STATE, action){
-    switch(action.type){
-        case ADD:
-            return [...state, action.book]
-    
+const bookReducer = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
+    case ADD:
+      return [...state, action.book];
+
     case REMOVE:
-            return state.filter((book) => book.id !== action.book.id);
-    }
-}
+      return state.filter((book) => book.id !== action.book.id);
+    default:
+      return state;
+  }
+};
 export const addBook = (book) => (
   { type: ADD, book }
 );
 
-export const deleteBook = (bookId) => (
-  { type: DELETE, bookId }
+export const removeBook = (bookId) => (
+  { type: REMOVE, bookId }
 );
-
-console.log(addBook({author: "abebe"}));
 
 export default bookReducer;
