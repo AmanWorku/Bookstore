@@ -1,8 +1,14 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeBook } from '../redux/books/books';
 
 const Book = () => {
   const books = useSelector((state) => state.books);
+  const dispatch = useDispatch();
+  const handleRemove = (e) => {
+    dispatch(removeBook(e.target.id));
+  };
+
   return (
 
     <div className="book list">
@@ -12,13 +18,18 @@ const Book = () => {
       </h1>
       {
         books.map((book) => (
-          <>
-            <h3>{book.author}</h3>
-            <h3>{book.title}</h3>
-          </>
+          <div key={book.id}>
+            <p>
+              {book.author}
+              {' '}
+              -
+              {' '}
+              {book.title}
+            </p>
+            <button type="submit" className="remove-btn" id={book.id} onClick={handleRemove}>Remove</button>
+          </div>
         ))
       }
-      <button type="submit" className="remove-btn">Remove</button>
     </div>
   );
 };
