@@ -19,12 +19,11 @@ const Book = () => {
       {
         books.map((book) => (
           <div key={book.id}>
+            <h2>
+              {book.title}
+            </h2>
             <p>
               {book.author}
-              {' '}
-              -
-              {' '}
-              {book.title}
             </p>
             <button type="submit" className="remove-btn" id={book.id} onClick={handleRemove}>Remove</button>
           </div>
