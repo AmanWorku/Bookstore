@@ -1,12 +1,12 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { removeBook } from '../redux/books/books';
+import { deleteBook } from '../redux/books/books';
 
 const Book = () => {
   const books = useSelector((state) => state.books);
   const dispatch = useDispatch();
   const handleRemove = (e) => {
-    dispatch(removeBook(e.target.id));
+    dispatch(deleteBook(e.target.id));
   };
 
   return (

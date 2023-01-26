@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid';
-import { addBook } from '../redux/books/books';
+import { createBook } from '../redux/books/books';
 
 const AddBook = () => {
   const dispatch = useDispatch();
@@ -34,7 +34,7 @@ const AddBook = () => {
       title: newBook.title,
       author: newBook.author,
     };
-    dispatch(addBook(book));
+    dispatch(createBook(book));
     setNewBook({
       title: '',
       author: '',
