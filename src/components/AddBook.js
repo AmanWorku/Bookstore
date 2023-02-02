@@ -1,76 +1,54 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { v4 as uuid } from 'uuid';
 import { createBook } from '../redux/books/books';
 
-const AddBook = () => {
+function AddBook() {
   const dispatch = useDispatch();
 
-  const [newBook, setNewBook] = useState({ title: '', author: '' });
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('Fiction');
 
-  const handleTitle = (e) => {
-    if (e.target.value !== '') {
-      setNewBook({
-        ...newBook, title: e.target.value,
-      });
-    }
-  };
-  const handleAuthor = (e) => {
-    if (e.target.value !== '') {
-      setNewBook({
-        ...newBook, author: e.target.value,
-      });
-    }
-  };
+  const updateTitle = (e) => setTitle(e.target.value);
+  const updateAuthor = (e) => setAuthor(e.target.value);
+  const updateCategory = (e) => setCategory(e.target.value);
 
-  const handleSubmit = (e) => {
+  const addNewBook = (e) => {
     e.preventDefault();
-    if (!(newBook.title.trim() && newBook.author.trim())) {
-      return;
+    if (title && author && category) {
+      dispatch(createBook({
+        title,
+        author,
+        category,
+      }));
+      setTitle('');
+      setAuthor('');
+      setCategory('');
     }
-
-    const book = {
-      id: uuid(),
-      title: newBook.title,
-      author: newBook.author,
-    };
-    dispatch(createBook(book));
-    setNewBook({
-      title: '',
-      author: '',
-    });
   };
+
   return (
     <div>
-      <form>
-
-        <input
-          type="text"
-          placeholder="Title"
-          name="title"
-          value={newBook.title}
-          onChange={handleTitle}
-          required
-        />
-
-        <input
-          type="text"
-          placeholder="Author"
-          name="author"
-          value={newBook.author}
-          onChange={handleAuthor}
-          required
-        />
-
-        <button
-          type="submit"
-          onClick={handleSubmit}
-        >
-          Add Book
-        </button>
+      <h2>ADD NEW BOOK</h2>
+      <form onSubmit={addNewBook}>
+        <input type="text" placeholder="Book title" onChange={updateTitle} value={title} />
+        <input type="text" placeholder="Add author" onChange={updateAuthor} value={author} />
+        <select onChange={updateCategory} value={category}>
+          <option value="Fiction">Fiction</option>
+          <option value="Horror">Horror</option>
+          <option value="History">History</option>
+          <option value="Philosophy">Philosophy</option>
+          <option value="Computer-Science">Computer Science</option>
+          <option value="Astrology">Astrology</option>
+          <option value="Mathematics">Mathematics</option>
+          <option value="Biology">Biology</option>
+          <option value="Physics">Physics</option>
+          <option value="Biography">Biography</option>
+        </select>
+        <button type="submit">ADD BOOK</button>
       </form>
     </div>
   );
-};
+}
 
 export default AddBook;
