@@ -14,8 +14,7 @@ const DisplayBooks = () => {
 
   return (
     <>
-      <div>
-        <h1>Books</h1>
+      <div className="books">
         {Object.keys(books).length > 0 && Object.keys(books).map((id) => (
           <div key={id}>
             <Book
