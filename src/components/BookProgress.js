@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import CircleProgress from './CircleProgress';
 import Stat from './Stat';
 
@@ -18,12 +17,5 @@ const BookProgress = () => (
     </div>
   </div>
 );
-
-BookProgress.propTypes = {
-  progress: PropTypes.shape({
-    currentChapter: PropTypes.string.isRequired,
-    completed: PropTypes.string.isRequired,
-  }).isRequired,
-};
 
 export default BookProgress;
