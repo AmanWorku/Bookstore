@@ -25,7 +25,6 @@ function AddBook() {
 
   return (
     <div>
-      <h2>ADD NEW BOOK</h2>
       <form onSubmit={addNewBook}>
         <input type="text" placeholder="Book title" onChange={changeTitle} value={title} />
         <input type="text" placeholder="Add author" onChange={changeAuthor} value={author} />

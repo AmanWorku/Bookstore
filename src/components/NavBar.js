@@ -5,6 +5,7 @@ const NavBar = () => (
   <nav>
     <Link to="/">Books</Link>
     <Link to="/categories">Categories</Link>
+    <span className="material-icons primary-color">person</span>
   </nav>
 );
 export default NavBar;
