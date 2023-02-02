@@ -14,7 +14,7 @@ const DisplayBooks = () => {
 
   return (
     <>
-      <div>
+      <div className="books">
         {Object.keys(books).length > 0 && Object.keys(books).map((id) => (
           <div key={id}>
             <Book

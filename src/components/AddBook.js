@@ -25,11 +25,11 @@ function AddBook() {
 
   return (
     <div>
-      <h2>ADD NEW BOOK</h2>
-      <form onSubmit={addNewBook}>
-        <input type="text" placeholder="Book title" onChange={changeTitle} value={title} />
-        <input type="text" placeholder="Add author" onChange={changeAuthor} value={author} />
-        <select onChange={changeCategory} value={category}>
+      <h2 className="add-title">ADD NEW BOOK</h2>
+      <form className="add-form" onSubmit={addNewBook}>
+        <input className="input title-input" type="text" placeholder="Book title" onChange={changeTitle} value={title} />
+        <input className="input title-input" type="text" placeholder="Add author" onChange={changeAuthor} value={author} />
+        <select className="input category-input" onChange={changeCategory} value={category}>
           <option value="Computer-Science">Computer Science</option>
           <option value="Astrology">Health</option>
           <option value="Mathematics">Agriculture</option>
@@ -39,7 +39,7 @@ function AddBook() {
           <option value="Biography">Biography</option>
           <option value="Biography">Comics</option>
         </select>
-        <button type="submit">Add Book</button>
+        <button className="primary-button-big" type="submit">ADD BOOK</button>
       </form>
     </div>
   );
