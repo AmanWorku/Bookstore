@@ -7,42 +7,18 @@ function Book({
   author, title, category, bookId,
 }) {
   const dispatch = useDispatch();
-  const removeBookAction = () => dispatch(removeBook(bookId));
+  const handleRemove = () => dispatch(removeBook(bookId));
   return (
     <>
       <div>
-        <div>
-          <div>
-            <h4>
-              {category}
-            </h4>
-            <h3>
-              {title}
-            </h3>
-            <p>
-              Author&apos;s
-              {author}
-            </p>
-          </div>
-          <div>
-            <button
-              type="button"
-            >
-              Comments
-            </button>
-            <button
-              type="button"
-              onClick={removeBookAction}
-            >
-              Remove
-            </button>
-            <button
-              type="button"
-            >
-              Edit
-            </button>
-          </div>
-        </div>
+        <h4>{ category }</h4>
+        <h3>{ title }</h3>
+        <p>{ author }</p>
+      </div>
+      <div>
+        <button type="button">Comments</button>
+        <button type="button" onClick={handleRemove}>Remove</button>
+        <button type="button">Edit</button>
       </div>
     </>
   );
