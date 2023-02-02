@@ -13,12 +13,13 @@ const Categories = () => {
   return (
     <div>
       <button
+        className="primary-button status"
         type="submit"
         onClick={handleCheckStatus}
       >
         Check Status
       </button>
-      <h3>{allCategories}</h3>
+      <h3 className="status-result">{allCategories}</h3>
     </div>
   );
 };

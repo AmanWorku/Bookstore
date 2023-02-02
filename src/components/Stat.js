@@ -1,16 +1,10 @@
-import PropTypes from 'prop-types';
-import './Stat.css';
-
-const Stat = ({ percent = 0 }) => (
+const rand = Math.floor(Math.random() * 100);
+const Stat = () => (
   <div className="progress-stat">
-    <p className="percent-complete">{`${percent}%`}</p>
+    <p className="percent-complete">{`${rand}%`}</p>
     <p className="completed">Completed</p>
   </div>
 
 );
-
-Stat.propTypes = {
-  percent: PropTypes.string.isRequired,
-};
 
 export default Stat;

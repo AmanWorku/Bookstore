@@ -1,6 +1,6 @@
 const CHECK_STATUS = 'categories/CHECK_STATUS';
 
-const INITIAL_STATE = 0;
+const INITIAL_STATE = null;
 
 const categoryReducer = (state = INITIAL_STATE, action = {}) => {
   switch (action.type) {
