@@ -1,23 +1,46 @@
-const ADD = 'bookstore/books/ADD';
-const REMOVE = 'bookstore/books/REMOVE';
-const INITIAL_STATE = [];
-const bookReducer = (state = INITIAL_STATE, action) => {
+import { v4 as uuidv4 } from 'uuid';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+
+const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/4VMnxg8UxAvJy9n9Wbft/books';
+
+// Actions
+export const loadBooks = createAsyncThunk('bookstore/books/LOAD', async () => {
+  const res = await fetch(URL);
+  // eslint-disable-next-line
+  return await res.json();
+});
+
+export const createBook = createAsyncThunk('bookstore/books/CREATE', async (book) => {
+  await fetch(URL, {
+    method: 'POST',
+    body: new URLSearchParams({
+      item_id: uuidv4(),
+      author: book.author,
+      title: book.title,
+      category: book.category,
+    }),
+  });
+  const res = await fetch(URL);
+  // eslint-disable-next-line
+  return await res.json();
+});
+
+export const removeBook = createAsyncThunk('bookstore/books/REMOVE', async (bookId) => {
+  await fetch(`${URL}/${bookId}`, {
+    method: 'DELETE',
+  });
+  const res = await fetch(URL);
+  // eslint-disable-next-line
+  return await res.json();
+});
+
+// Reducer
+export default function reducer(state = {}, action) {
   switch (action.type) {
-    case ADD:
-      return [...state, action.book];
-
-    case REMOVE:
-      return state.filter((book) => book.id !== action.bookId);
-    default:
-      return state;
+    case loadBooks.fulfilled.type:
+    case createBook.fulfilled.type:
+    case removeBook.fulfilled.type:
+      return action.payload;
+    default: return state;
   }
-};
-export const addBook = (book) => (
-  { type: ADD, book }
-);
-
-export const removeBook = (bookId) => (
-  { type: REMOVE, bookId }
-);
-
-export default bookReducer;
+}

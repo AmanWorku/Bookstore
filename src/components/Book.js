@@ -1,35 +1,34 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { removeBook } from '../redux/books/books';
 
-const Book = () => {
-  const books = useSelector((state) => state.books);
+function Book({
+  author, title, category, bookId,
+}) {
   const dispatch = useDispatch();
-  const handleRemove = (e) => {
-    dispatch(removeBook(e.target.id));
-  };
-
+  const handleRemove = () => dispatch(removeBook(bookId));
   return (
-
-    <div className="book list">
-      <h1>
-        <span className="title">Book Title</span>
-        <span className="author">Book Author</span>
-      </h1>
-      {
-        books.map((book) => (
-          <div key={book.id}>
-            <h2>
-              {book.title}
-            </h2>
-            <p>
-              {book.author}
-            </p>
-            <button type="submit" className="remove-btn" id={book.id} onClick={handleRemove}>Remove</button>
-          </div>
-        ))
-      }
-    </div>
+    <>
+      <div>
+        <h4>{ category }</h4>
+        <h3>{ title }</h3>
+        <p>{ author }</p>
+      </div>
+      <div>
+        <button type="button">Comments</button>
+        <button type="button" onClick={handleRemove}>Remove</button>
+        <button type="button">Edit</button>
+      </div>
+    </>
   );
+}
+
+Book.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  bookId: PropTypes.string.isRequired,
 };
+
 export default Book;
