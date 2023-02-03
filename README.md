@@ -54,7 +54,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- **Coming Soon**
+- Check the live demo here: [Live Demo Link](https://bookstore-by-aman.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
