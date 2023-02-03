@@ -31,13 +31,13 @@ function AddBook() {
         <input className="input title-input" type="text" placeholder="Add author" onChange={changeAuthor} value={author} />
         <select className="input category-input" onChange={changeCategory} value={category}>
           <option value="Computer-Science">Computer Science</option>
-          <option value="Astrology">Health</option>
-          <option value="Mathematics">Agriculture</option>
-          <option value="Biology">Mechanical Engineering</option>
-          <option value="Physics">Mathematics</option>
-          <option value="Physics">Fiction</option>
+          <option value="Health">Health</option>
+          <option value="Agriculture">Agriculture</option>
+          <option value="Mechanical Engineering">Mechanical Engineering</option>
+          <option value="Mathematics">Mathematics</option>
+          <option value="Fiction">Fiction</option>
           <option value="Biography">Biography</option>
-          <option value="Biography">Comics</option>
+          <option value="Comics">Comics</option>
         </select>
         <button className="primary-button-big" type="submit">ADD BOOK</button>
       </form>
