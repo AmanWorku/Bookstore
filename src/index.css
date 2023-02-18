@@ -209,7 +209,8 @@ nav {
   cursor: pointer;
 }
 
-.primary-button:hover {
+.primary-button:hover,
+.primary-button-big:hover {
   background-color: white;
   color: #b16d3d;
   border: 1px solid #90552b;
