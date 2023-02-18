@@ -200,12 +200,13 @@ nav {
 .primary-button {
   cursor: pointer;
   border: none;
-  color: #bc7542;
+  background-color: #bc7542;
   border-radius: 3px;
   padding: 8px 24px;
   font-family: "Roboto Slab", serif;
   font-weight: 300;
   letter-spacing: 0.5px;
+  color: white;
 }
 
 .circular-progress-container {
