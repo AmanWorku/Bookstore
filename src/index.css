@@ -36,7 +36,7 @@ nav {
   font-family: "Montserrat", sans-serif;
   font-size: 1.875rem;
   font-weight: bold;
-  color: #0290ff;
+  color: #b16d3d;
 }
 
 .nav-links {
@@ -60,7 +60,7 @@ nav {
 }
 
 .primary-color {
-  color: #0290ff;
+  color: #b16d3d;
 }
 
 .account-btn {
@@ -88,7 +88,7 @@ nav {
   font-family: "Roboto Slab", serif;
   background-color: transparent;
   border: none;
-  color: #4386bf;
+  color: #90552b;
   font-size: 0.875rem;
   font-weight: 300;
   align-items: center;
@@ -148,7 +148,7 @@ nav {
   font-family: "Roboto Slab", serif;
   font-size: 0.875rem;
   font-weight: 300;
-  color: #4386bf;
+  color: #b16d3d;
   margin-top: -15px;
 }
 
@@ -200,13 +200,12 @@ nav {
 .primary-button {
   cursor: pointer;
   border: none;
-  background-color: #0290ff;
+  color: #bc7542;
   border-radius: 3px;
   padding: 8px 24px;
   font-family: "Roboto Slab", serif;
   font-weight: 300;
   letter-spacing: 0.5px;
-  color: white;
 }
 
 .circular-progress-container {
@@ -220,7 +219,7 @@ nav {
 
 .circular-progress {
   position: absolute;
-  border: solid 5px #307bbe;
+  border: solid 5px #b16d3d;
   border-left-color: #e8e8e8;
   border-radius: 50%;
   width: 4.25rem;
@@ -290,7 +289,7 @@ nav {
   width: 20%;
   padding: 12px;
   border-radius: 3px;
-  background-color: #0290ff;
+  background-color: #b16d3d;
   border: none;
   letter-spacing: 0.5px;
   color: white;
