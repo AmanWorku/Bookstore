@@ -198,7 +198,6 @@ nav {
 }
 
 .primary-button {
-  cursor: pointer;
   border: none;
   background-color: #bc7542;
   border-radius: 3px;
@@ -207,6 +206,14 @@ nav {
   font-weight: 300;
   letter-spacing: 0.5px;
   color: white;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  background-color: white;
+  color: #b16d3d;
+  border: 1px solid #90552b;
+  transition: 0.2s ease-in-out;
 }
 
 .circular-progress-container {
